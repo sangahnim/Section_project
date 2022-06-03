@@ -1,6 +1,6 @@
 # **AI_BOOTCAMP_Section_Project**
 
-## **SECTION1**
+## [**SECTION1**](https://github.com/sangahnim/section_project/blob/master/AI_05_%EC%9D%B4%EC%83%81%EC%95%84_Section1.ipynb)
 1. 주제 : 다음 분기에 설계해야할 게임에 대한 분석(EDA project)
 2. 데이터 : Kaggle의 Video Game Sales 바탕으로 변형된 csv file
 3. preprocessing : 

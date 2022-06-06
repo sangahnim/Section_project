@@ -1,6 +1,6 @@
 ## [**SECTION1**](https://github.com/sangahnim/section_project/blob/master/section1/AI_05_%EC%9D%B4%EC%83%81%EC%95%84_Section1.ipynb)
 1. **주제 및 문제정의** : 다음 분기에 설계해야할 게임에 대한 EDA Project
-지역별 선호하는 게임장르, 연도별 게임의 트렌드, 출고량이 높은 게임 및 플랫폼별 출고량 대해 확인하고 의사결정
+> 지역별 선호하는 게임장르, 연도별 게임의 트렌드, 출고량이 높은 게임 및 플랫폼별 출고량 대해 확인하고 의사결정
 2. **데이터** : Kaggle의 Video Game Sales 바탕으로 변형된 csv file
 3. **EDA, preprocessing** : 
 >  1) 결측치제거 : 불필요한 'N/A'을 공란으로 만든 후, 해당내용 및 이 외의 결측치 포함된 행 제거

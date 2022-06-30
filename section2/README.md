@@ -1,33 +1,71 @@
 ## [**SECTION2**](https://github.com/sangahnim/section_project/blob/main/section2/AI_05_%EC%9D%B4%EC%83%81%EC%95%84_Section2.ipynb)
 
-1. **주제** : 어플평점 4점을 넘기위해 고려해야 할 사항에 대한 Machine Learning Project
-2. **데이터** : kaggle의 2017/07 앱스토어데이터 csv file
-> 데이터선정이유 및 문제정의
-> * 코로나시국, 비대면 사회에서 가장 중요한 도구인 휴대폰에서 만족도가 높은 어플의 특징들을 파악해보고자 함
-> * 많은 휴대폰 중 많은 사람들의 사랑받는 애플, 앱스토어를 이용하여 7,197의 데이터 기준으로 분석
-> * 어플평점 4점 초과/미만인 경우의 데이터 특성을 이진분류문제로 정리하여 도출
-3. **EDA, preprocessing** :
+1. **프로젝트 주제** : 어플평점 4점을 넘기위해 고려해야 할 사항에 대한 Machine Learning Project
+> * 해결하고자하는 문제 : 어플 고평점 예측
+> * 데이터 : 캐글의 2017년 앱스토어 어플 통계데이터(7197개)
+>> * 선정이유
+>> * 코로나시국, 비대면 사회에서 가장 중요한 도구는 휴대폰이다.
+>> * 사용할 Target 특성은 4.5이상 평점을 받은 binary data로 분류문제이다.
+>> * 어떤 특징에 따라 고평점을 받을 수 있는지 없는지, 예측하는 모델링을 할 것이다.
+
+2. **Import Library, Data** 
+
+3. **가설, 기준모델(Baseline model), 평가지표설명**:
+
+> * 가설
+>> * 가설1 : 소프트웨어산업 중 가장 높은 비율을 차지하는 장르가 추천할 확률도 가장 높을 것이다.
+>> * 어플 장르에 게임이 차지하는 비율이 압도적으로 높기에 전체를 기준으로 추천율, 비추천율을 장르별로 보면 게임이 모두 다 높다.
+>> * 마지막 그래프인 recommendation ratio by genre2를 보면, 게임의 추천비율 점유율과 무관하게 추천율은 높지 않음을 확인할 수 있으며, 가장 추천율이 높은 것은 Book인 것을 확인할 수 있다.
+>> * 가설2 : 가격의 영향력은 크기 때문에, 저렴하면 추천될 확률이 높을 것이다.
+>> * 추천과 비추천의 데이터 수가 무료에 다른 가격에 비해 많고, 추천과 비추천 모두 가격이 적을수록 수치가 높았다.
+>> * 큰 의미가 없다 판단하여 각 가격별로 추천비율을 구했을 때, 18.99달러와 23.99달러의 추천율이 1로, 데이터가 하나씩있는 이상치임을 확인하였다.
+>> * 해당 가설은 큰 의미가 없는 것으로 판단한다.
+
+> * 기준모델 및 평가지표설명
+>> * Target 특성은 어플 평점이 4.5점을 넘으면 True로 표시하는 새로운 특성을 생성.
+>> * Baseline Model로는 초기 최빈값인 0.92에서 RandomForest의 AUC Score로 변경하였다.
+
+4. **EDA, preprocessing** :
+
 >   1) 불필요한 컬럼 제거 및 특성이름정리 : 중복 등 불필요한 컬럼은 제거, 특성이름은 일관성있게 맞춰줌
->   2) data 정리 : ver 및  count_rating 특성의 데이터 보기쉽게 정리 (ex) '6.3.5'-> '6', '4+'->'4')
+>   2) data 정리 : ver 특성의 데이터 중 불필요한 데이터 제거 및  count_rating 특성의 데이터 정리 (ex) '6.3.5'-> 6, '4+'->'4')
 >   3) 이상치제거 : 데이터의 분포확인 후, user_rating_tot의 컬럼이 0이면 이상치로보고 제거 (어떤 회사라도 1개는 있을 것이다는 가정. 점수가 없다면 만들어진지 얼마 안된 어플일 것이다.)
->   4) Feature Engineering : recommend 특성을 생성하여 true/false의 이진분류문제로 정리.
-4. **reccommend 특성을 True로 예측하기 위한 모델링**
-> 1. 기준모델(Baseline model), 평가지표설명:
->>   1) Precision과 Recall의 조화평균인 F-1score로 평가시 1로 과적함이 됨을 확인.
->>   2) High cardinlity(범주의 종류가 많음)로 불필요한 특성들 제거, recommend 특성을 만들 시 참고했던 특성을 제거하여 추가전처리함.
+>   4) Feature Engineering : recommend 특성을 생성하여 True/False의 이진분류문제로 정리.
 
-> 2. OrdinalEncoder를 이용한 모델링(XGBClassifier, RandomForest, DecisionTree, RandomForest)
->>   1) 1에서 정리된 file을 train, validation, test로 나누고, train으로 학습시, 세 모델 중 RandomForest가 f-1score 성능이 가장 좋음을 확인.
-> 3. Target Encoder를 이용한 모델링(XGBClassifier, RandomForest, DecisionTree, RandomForest)
-    >> ## =>모든 모델링 전부 TargetEncoder가 좋은 성능을 보여주며, 세 모델 중 XGB의 성능이 가장 좋았음을 확인
->>   2) 하이퍼파라미터로 조정 후 train데이터 학습시, XGBClassifier의 f1-score가 0.61->0.64로 높아짐을 확인.
->>   3) Randomforest 모델성능향상을 위해 순열중요도(Permutation Importance) 및 RandomizedSearch를 이용하여 테스트데이터로 확인시, f1-score는 0.60
->>   4) 이용하여 최적의 하이퍼파라미터로 조정,
-6. **머신러닝 모델 해석k**
->   1) 변수의 중요도를 알아보기 위해 permutationimportance사용
+5. **Modeling**
+    
+> 1) 1차 모델링(RandomForest), 기준모델
+>> * Ordinal Encoder로 RandomForest를 이용해서 1차 Baseline Modeling을 진행했다.
+>> * 기본적인 모델링으로 특별한 Parameter없이 진행했으며, 훈련정확도가 1로 과적합임을 확인하였다.
+>> * 하지만 검증 Set에서의 정확도가 최빈값 Baseline을 넘었으므로 이번 Modeling에서 유심히 볼 평가지표인 'AUC Score'를 Baseline으로 두고 진행한다.
+>> * Target의 imbalance함이 score에 영향을 주어 소수인 '1'에 대한 score는 전체적으로 낮은데, 밸런스화가 이번 모델링의 핵심으로 보인다.
+>> * 추후 SMOTE를 적용하면 얼마나 성능이 좋아질 지 확인해보기로 한다.
+>> * AUC 점수 : 0.5310781560781561
 
+> 2) 2차 모델링 (CatBoost)
+>> *  AUC 점수 : 0.5243213993213992
+> 3) Hyper Parameter Tuning the RandomForest with SMOTE
+>> (1) RandomForest with SMOTE1 : auc점수 :  0.5746753246753247
+>> (2) RandomForest with SMOTE2 : auc점수 :  0.5
+>> (3) RandomForest with SMOTE3 : auc점수 :  0.5
+> 4) Hyper Parameter Tuning the CatBoost with SMOTE
+>> (1) CatBoost with SMOTE1 : auc점수 :  0.5397069147069148
+>> (2) CatBoost with SMOTE2 : auc점수 :  0.5118901368901368
+>> (3) CatBoost with SMOTE3 : auc점수 :  0.5118901368901368
+> 5) Hyper Parameter Tuning the RandomForest with OverSampling
+>> auc점수 :  0.59496021996022
+> 6) Hyper Parameter Tuning the CatBoost with OverSampling
+>> (1) CatBoost with OverSampling1 : auc점수 :  0.5386392886392886
+>> (2) CatBoost with OverSampling2 : auc점수 :  0.549973674973675
 
-2. 데이터의 기준모델 및 평가지표 설명 
-3. 탐색적 데이터분석 및 데이터전처리 방식 
-4. 머신러닝방식적용 및 교차검증
-5. 머신러닝모델해석결과
+6. **머신러닝모델 해석결과**
+> 1) 최종모델 : OverSampling 적용된 RandomForest모델
+> 2) Feature Importance
+> 3) Permutation Importance (순열 중요도)
+> 4) PDP
+>> * Feature Importance에서 중요한 상위 4가지 Feature에 대해 PDPlot 확인
+> 5) 프로젝트 회고
+>> * 각 그래프 확인 결과 Feature Importance에서는 lang\_num, prime\_genre, size\_bytes가 거의 동일하게 높았고, Permutation importance에서는 size\_bytes의 우선순위가 가장 높았는데, 비슷하지만 다른 순서를 보임을 확인할 수 있다.
+>> * 최종모델에 Test Data를 넣었을 때, AUC Scorer가 0.58로 모델의 성능이 좋다고 하기는 어려운데, 이는 데이터 특성의 정보가 부족하기 때문이라고 생각한다.
+>> * 어플의 특성은 주관적인 판단이 많이 들어가는데, 캐글 데이터의 특성은 한계가 있었고, 주관적인 내용은 사실 구분하기 쉽지않다.
+>> * 연령대나 성별 등 이용자의 정보가 추가적으로 특성에 반영된다면 더 좋은 모델링을 할 수 있을 것이라 기대한다.

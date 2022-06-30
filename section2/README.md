@@ -45,18 +45,18 @@
 > 2) 2차 모델링 (CatBoost)
 >> *  AUC 점수 : 0.5243213993213992
 > 3) Hyper Parameter Tuning the RandomForest with SMOTE
->> (1) RandomForest with SMOTE1 : auc점수 :  0.5746753246753247
->> (2) RandomForest with SMOTE2 : auc점수 :  0.5
->> (3) RandomForest with SMOTE3 : auc점수 :  0.5
+>> (1) RandomForest with SMOTE1 : auc점수 :  0.5746753246753247  
+>> (2) RandomForest with SMOTE2 : auc점수 :  0.5  
+>> (3) RandomForest with SMOTE3 : auc점수 :  0.5  
 > 4) Hyper Parameter Tuning the CatBoost with SMOTE
->> (1) CatBoost with SMOTE1 : auc점수 :  0.5397069147069148
->> (2) CatBoost with SMOTE2 : auc점수 :  0.5118901368901368
->> (3) CatBoost with SMOTE3 : auc점수 :  0.5118901368901368
+>> (1) CatBoost with SMOTE1 : auc점수 :  0.5397069147069148  
+>> (2) CatBoost with SMOTE2 : auc점수 :  0.5118901368901368  
+>> (3) CatBoost with SMOTE3 : auc점수 :  0.5118901368901368  
 > 5) Hyper Parameter Tuning the RandomForest with OverSampling
 >> auc점수 :  0.59496021996022
 > 6) Hyper Parameter Tuning the CatBoost with OverSampling
->> (1) CatBoost with OverSampling1 : auc점수 :  0.5386392886392886
->> (2) CatBoost with OverSampling2 : auc점수 :  0.549973674973675
+>> (1) CatBoost with OverSampling1 : auc점수 :  0.5386392886392886  
+>> (2) CatBoost with OverSampling2 : auc점수 :  0.549973674973675  
 
 6. **머신러닝모델 해석결과**
 > 1) 최종모델 : OverSampling 적용된 RandomForest모델

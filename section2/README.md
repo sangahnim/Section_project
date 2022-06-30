@@ -21,18 +21,12 @@
 
 >> * 가설1 : 소프트웨어산업 중 가장 높은 비율을 차지하는 장르가 추천할 확률도 가장 높을 것이다.
 
-
-![ㄹㄹㄹㄹ.png](../../../../Desktop/ㄹㄹㄹㄹ.png)
-
-![스크린샷 2022-07-01 오전 1.06.55.png](../../../../Desktop/스크린샷 2022-07-01 오전 1.06.55.png) 
-
 >> * 어플 장르에 게임이 차지하는 비율이 압도적으로 높기에 전체를 기준으로 추천율, 비추천율을 장르별로 보면 게임이 모두 다 높다.
 >> * 마지막 그래프인 recommendation ratio by genre2를 보면, 게임의 추천비율 점유율과 무관하게 추천율은 높지 않음을 확인할 수 있으며, 가장 추천율이 높은 것은 Book인 것을 확인할 수 있다.
 
 
 >> * 가설2 : 가격의 영향력은 크기 때문에, 저렴하면 추천될 확률이 높을 것이다.
 
-![ffff.png](../../../../Desktop/ffff.png)
 >> * 추천과 비추천의 데이터 수가 무료에 다른 가격에 비해 많고, 추천과 비추천 모두 가격이 적을수록 수치가 높았다.
 >> * 큰 의미가 없다 판단하여 각 가격별로 추천비율을 구했을 때, 18.99달러와 23.99달러의 추천율이 1로, 데이터가 하나씩있는 이상치임을 확인하였다.
 >> * 해당 가설은 큰 의미가 없는 것으로 판단한다.
@@ -41,8 +35,7 @@
 > **기준모델 및 평가지표설명**
 
 >> * Target 특성은 어플 평점이 4.5점을 넘으면 True로 표시하는 새로운 특성을 생성.
->> * Baseline Model로는 초기 최빈값인 0.92에서 RandomForest의 AUC Score로 변경하였다.
-![ㄹㄹㄹ.png](../../../../Desktop/ㄹㄹㄹ.png)
+>> * Baseline Model로는 초기 최빈값인 0.92에서 RandomForest의 AUC Score로 변경하였다
 
 
 4. **EDA, preprocessing** :
@@ -91,29 +84,18 @@
 6. **머신러닝모델 해석결과**
 
 > 1) 최종모델 : OverSampling 적용된 RandomForest모델.
-
->> Validation set 기준 auc점수 :  0.59496021996022  ![스크린샷 2022-07-01 오전 2.14.30.png](../../../../../../var/folders/07/192hjwjx7jzfdyz0ph3vff080000gn/T/TemporaryItems/NSIRD_screencaptureui_dgOLoU/스크린샷 2022-07-01 오전 2.14.30.png)
-
+>> Validation set 기준 auc점수 :  0.59496021996022  
 >> Test set 기준     auc점수 :  0.5808398950131233
-![스크린샷 2022-07-01 오전 2.16.05.png](../../../../../../var/folders/07/192hjwjx7jzfdyz0ph3vff080000gn/T/TemporaryItems/NSIRD_screencaptureui_aUY6V8/스크린샷 2022-07-01 오전 2.16.05.png)
 
 > 2) Feature Importance
-
-![스크린샷 2022-07-01 오전 2.17.26.png](../../../../../../var/folders/07/192hjwjx7jzfdyz0ph3vff080000gn/T/TemporaryItems/NSIRD_screencaptureui_5FzQt5/스크린샷 2022-07-01 오전 2.17.26.png "스크린샷 2022-07-01 오전 2.17.26.png")
 
 > 3) Permutation Importance (순열 중요도)
 
 >> * 순열 중요도에 대한 음수 값은 데이터에 대한 예측이 실제 데이터보다 더 정확함을 나타낸다.
 >> * 이는 특성이 예측에 많은 기여를 하지 않고,(중요도가 0에 가까움) 무작위 우연으로 인해 섞인 데이터에 대한 예측이 더 정확하다는 것을 의미한다.
 
-![스크린샷 2022-07-01 오전 2.35.06.png](../../../../Desktop/스크린샷 2022-07-01 오전 2.35.06.png "스크린샷 2022-07-01 오전 2.35.06.png")
-
 > 4) PDP
-
 >> * Feature Importance에서 중요한 상위 4가지 Feature에 대해 PDPlot 확인
-![rrr.png](../../../../Desktop/rrr.png)
-![lll.png](../../../../Desktop/lll.png)
-
 
 > 5) 프로젝트 회고
 >> * 각 그래프 확인 결과 Feature Importance에서는 lang\_num, prime\_genre, size\_bytes가 거의 동일하게 높았고, Permutation importance에서는 size\_bytes의 우선순위가 가장 높았는데, 비슷하지만 다른 순서를 보임을 확인할 수 있다.

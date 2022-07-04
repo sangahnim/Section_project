@@ -1,4 +1,4 @@
-## [**SECTION2**](https://github.com/sangahnim/section_project/blob/main/section2/AI_05_%EC%9D%B4%EC%83%81%EC%95%84_Section2.ipynb)
+## [**SECTION2**](https://github.com/sangahnim/section_project/blob/main/section_2/AI_05_%EC%9D%B4%EC%83%81%EC%95%84_Section2.ipynb)
 
 
 1. **프로젝트 주제** : 어플평점 4점을 넘기위해 고려해야 할 사항에 대한 Machine Learning Project

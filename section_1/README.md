@@ -24,3 +24,24 @@
 >>        => ps3의 액션게임으로 북미시장에 진출해야함.
 >>        => 2022년 현재 ps5까지 나온 상황으로, ps 버전별 추가분석이 필요해보임.
 >>        (해당데이터에는 ps5에 대한 내용이 없음)
+
+
+![EDA_Project 001](https://user-images.githubusercontent.com/86824895/178964037-a989193f-f07b-4624-a6f9-25c07a2f7897.jpeg)
+![EDA_Project 002](https://user-images.githubusercontent.com/86824895/178964058-beb3f6d1-79cb-4052-b294-aa0d377acb23.jpeg)
+![EDA_Project 003](https://user-images.githubusercontent.com/86824895/178964062-dc31c85c-8844-463b-9c5b-9aa81a355a94.jpeg)
+![EDA_Project 004](https://user-images.githubusercontent.com/86824895/178964068-55d2c88c-99fe-4075-97ce-482ce952e087.jpeg)
+![EDA_Project 005](https://user-images.githubusercontent.com/86824895/178964076-994f2ed9-4768-4baf-acb8-8dfa197a3649.jpeg)
+![EDA_Project 006](https://user-images.githubusercontent.com/86824895/178964081-cd333436-57a1-420b-8111-7bfb8559a895.jpeg)
+![EDA_Project 007](https://user-images.githubusercontent.com/86824895/178964086-065a2b45-8392-4ec0-8acb-13f9a2433e21.jpeg)
+![EDA_Project 008](https://user-images.githubusercontent.com/86824895/178964089-4713201b-11c0-46b3-8ee5-41cbd2842cdf.jpeg)
+![EDA_Project 009](https://user-images.githubusercontent.com/86824895/178964091-2c3c2db5-7b31-4e90-9396-655c7855087b.jpeg)
+![EDA_Project 010](https://user-images.githubusercontent.com/86824895/178964095-5eb575de-b1e5-410f-9623-79f9a5cf95d9.jpeg)
+![EDA_Project 011](https://user-images.githubusercontent.com/86824895/178964097-fa8dfa22-a600-4e37-ad85-c94fa281329e.jpeg)
+![EDA_Project 012](https://user-images.githubusercontent.com/86824895/178964098-fbcc4dae-fcbb-4ea3-ad19-de22552d91d2.jpeg)
+![EDA_Project 013](https://user-images.githubusercontent.com/86824895/178964101-c4cd5478-ff9b-48e6-b22d-cbd24a068826.jpeg)
+![EDA_Project 014](https://user-images.githubusercontent.com/86824895/178964104-8ba24c36-e6f7-45e3-b7de-f312b1245d03.jpeg)
+![EDA_Project 015](https://user-images.githubusercontent.com/86824895/178964106-c7543fa8-374f-44a5-bb07-a896b9213237.jpeg)
+![EDA_Project 016](https://user-images.githubusercontent.com/86824895/178964111-c81f1445-21f1-4a5c-8847-9e83c87673ec.jpeg)
+![EDA_Project 017](https://user-images.githubusercontent.com/86824895/178964115-00b56fbc-e95e-4340-9b50-dee26420dd0a.jpeg)
+![EDA_Project 018](https://user-images.githubusercontent.com/86824895/178964116-8538992b-5188-4190-bfef-8ae7a32da413.jpeg)
+![EDA_Project 019](https://user-images.githubusercontent.com/86824895/178964117-2b2498c6-56ba-4d9b-aff3-221e2122964a.jpeg)
